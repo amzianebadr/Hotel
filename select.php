@@ -32,7 +32,7 @@ $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <a href="edit.php?id=<?= $r["id"] ?>"> Edit</a> |
         <a href="delete.php?id=<?= $r["id"] ?>" 
            onclick="return confirm(' Are you sure you want to cancel this reservation?')">
-            Delete
+           🗑️ Delete
         </a>
     </td>
 </tr>
