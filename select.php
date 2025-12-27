@@ -6,8 +6,75 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+ 
+<head>
+   <style>
+    /* Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    padding: 20px;
+}
 
-<table border="1">
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #eaf2f8;
+}
+
+/* Buttons */
+.btn {
+    padding: 6px 14px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 6px;
+    color: #fff;
+    margin: 2px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.btn-edit {
+    background-color: #3498db;
+}
+
+.btn-edit:hover {
+    background-color: #2980b9;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+
+   </style> 
+</head>
+ <body>
+   <table border="1">
     <tr>
         <th>id</th>
         <th>code</th>
@@ -29,12 +96,13 @@ $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <td><?= $r["date_depart"] ?></td>
     <td><?= $r["type_chambre"] ?></td>
     <td>
-        <a href="edit.php?id=<?= $r["id"] ?>"> Edit</a> |
-        <a href="delete.php?id=<?= $r["id"] ?>" 
-           onclick="return confirm(' Are you sure you want to cancel this reservation?')">
-           🗑️ Delete
-        </a>
+ <a href="edit.php?id=<?= $r["id"] ?>" class="btn btn-edit">Edit</a>
+<a href="delete.php?id=<?= $r["id"] ?>" class="btn btn-delete">Delete</a>
+  
     </td>
 </tr>
 <?php } ?>
-</table>
+</table> 
+
+ </body>
+ 
