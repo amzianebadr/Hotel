@@ -26,7 +26,7 @@ if (isset($_POST["Reservation"])) {
 
         $insert->execute();
 
-        header("Location:formreservation.php?rese=1");
+        header("Location:formRese.php?rese=1");
         exit;
 
     } catch (PDOException $e) {

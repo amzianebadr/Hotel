@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="reservation.php" method="POST">
+    <form action="codeform.php" method="POST">
         <div>
          <label for="Code">Code raservation : </label>
         <input type="text" name="Code" id="Code" required>
